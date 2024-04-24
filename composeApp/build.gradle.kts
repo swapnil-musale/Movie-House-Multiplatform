@@ -37,6 +37,8 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            implementation(libs.kDeviceInfo)
         }
 
         androidMain.dependencies {

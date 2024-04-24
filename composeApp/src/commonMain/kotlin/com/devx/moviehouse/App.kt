@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import com.devx.moviehouse.theme.MovieHouseTheme
 
 @Composable
-internal fun App() {
-    MovieHouseTheme {
+internal fun App(dynamicColor: Boolean = false) {
+    MovieHouseTheme(dynamicColor = dynamicColor) {
         Column(
             modifier = Modifier
                 .fillMaxSize()

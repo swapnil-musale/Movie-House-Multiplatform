@@ -1,6 +1,7 @@
 package com.devx.moviehouse.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -10,6 +11,7 @@ import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import com.devx.kdeviceinfo.rememberDeviceInfoXState
 
 private val LightColorScheme = lightColorScheme(
     primary = md_theme_light_primary,
@@ -79,18 +81,38 @@ internal val LocalThemeIsDark = compositionLocalOf { mutableStateOf(true) }
 
 @Composable
 internal fun MovieHouseTheme(
+    systemIsDark: Boolean = isSystemInDarkTheme(),
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val systemIsDark = isSystemInDarkTheme()
     val isDarkState = remember { mutableStateOf(systemIsDark) }
-    CompositionLocalProvider(
-        LocalThemeIsDark provides isDarkState
-    ) {
+    val deviceInfoXState = rememberDeviceInfoXState()
+
+    val isDynamicColorSupport = if (deviceInfoXState.isAndroid) {
+        deviceInfoXState.androidInfo.version.sdkInt >= deviceInfoXState.androidInfo.VERSION_CODES.S
+    } else {
+        false
+    }
+
+    val colorScheme = when {
+        dynamicColor && isDynamicColorSupport -> {
+            if (isDarkState.value) {
+                dynamicLightColorScheme()
+            } else {
+                dynamicDarkColorScheme()
+            }
+        }
+
+        isDarkState.value -> DarkColorScheme
+        else -> LightColorScheme
+    }
+
+    CompositionLocalProvider(LocalThemeIsDark provides isDarkState) {
         val isDark by isDarkState
         SystemAppearance(!isDark)
 
         MaterialTheme(
-            colorScheme = if (isDark) DarkColorScheme else LightColorScheme,
+            colorScheme = colorScheme,
             content = content
         )
     }
@@ -98,3 +120,5 @@ internal fun MovieHouseTheme(
 
 @Composable
 internal expect fun SystemAppearance(isDark: Boolean)
+internal expect fun dynamicLightColorScheme(): ColorScheme
+internal expect fun dynamicDarkColorScheme(): ColorScheme

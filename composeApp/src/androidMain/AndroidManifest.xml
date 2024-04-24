@@ -5,7 +5,7 @@
         android:name=".MovieHouseApp"
         android:icon="@android:drawable/ic_menu_compass"
         android:label="Movie House"
-        android:theme="@android:style/Theme.Material.NoActionBar">
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"

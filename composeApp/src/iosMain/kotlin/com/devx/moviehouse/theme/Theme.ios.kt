@@ -1,5 +1,8 @@
 package com.devx.moviehouse.theme
 
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import platform.UIKit.UIApplication
@@ -15,3 +18,7 @@ internal actual fun SystemAppearance(isDark: Boolean) {
         )
     }
 }
+
+internal actual fun dynamicLightColorScheme(): ColorScheme = lightColorScheme()
+
+internal actual fun dynamicDarkColorScheme(): ColorScheme = darkColorScheme()
