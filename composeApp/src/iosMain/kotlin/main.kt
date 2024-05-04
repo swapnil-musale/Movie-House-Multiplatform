@@ -1,9 +1,9 @@
 @file:Suppress("FunctionName", "unused")
 
 import androidx.compose.ui.window.ComposeUIViewController
-import com.devx.moviehouse.App
+import com.devx.moviehouse.MovieHouseApp
 import platform.UIKit.UIViewController
 
 fun MainViewController(): UIViewController = ComposeUIViewController {
-    App(dynamicColor = false)
+    MovieHouseApp(dynamicColor = false)
 }

@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            App(dynamicColor = true)
+            MovieHouseApp(dynamicColor = false)
         }
     }
 }
