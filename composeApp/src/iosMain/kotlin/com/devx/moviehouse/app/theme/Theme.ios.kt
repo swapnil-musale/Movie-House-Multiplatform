@@ -1,4 +1,6 @@
-package com.devx.moviehouse.theme
+@file:Suppress("FunctionName")
+
+package com.devx.moviehouse.app.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme
@@ -19,6 +21,6 @@ internal actual fun SystemAppearance(isDark: Boolean) {
     }
 }
 
-internal actual fun dynamicLightColorScheme(): ColorScheme = lightColorScheme()
+internal actual fun DynamicLightColorScheme(): ColorScheme = lightColorScheme()
 
-internal actual fun dynamicDarkColorScheme(): ColorScheme = darkColorScheme()
+internal actual fun DynamicDarkColorScheme(): ColorScheme = darkColorScheme()

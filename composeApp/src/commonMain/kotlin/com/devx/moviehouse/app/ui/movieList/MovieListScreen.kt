@@ -1,4 +1,4 @@
-package com.devx.moviehouse.ui
+package com.devx.moviehouse.app.ui.movieList
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

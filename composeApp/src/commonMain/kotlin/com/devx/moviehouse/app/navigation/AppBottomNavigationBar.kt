@@ -1,4 +1,4 @@
-package com.devx.moviehouse.navigation
+package com.devx.moviehouse.app.navigation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.material3.Icon

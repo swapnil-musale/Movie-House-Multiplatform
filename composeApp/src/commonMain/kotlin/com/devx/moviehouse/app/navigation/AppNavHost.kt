@@ -1,4 +1,4 @@
-package com.devx.moviehouse
+package com.devx.moviehouse.app.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,11 +10,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.devx.moviehouse.navigation.AppScreen
-import com.devx.moviehouse.ui.MovieDetailsScreen
-import com.devx.moviehouse.ui.MovieListScreen
-import com.devx.moviehouse.ui.PopularScreen
-import com.devx.moviehouse.ui.TvSeriesScreen
+import com.devx.moviehouse.app.ui.MovieDetailsScreen
+import com.devx.moviehouse.app.ui.PopularScreen
+import com.devx.moviehouse.app.ui.TvSeriesScreen
+import com.devx.moviehouse.app.ui.movieList.MovieListScreen
 
 @Composable
 internal fun AppNavHost(navController: NavHostController, paddingValues: PaddingValues) {
@@ -41,9 +40,11 @@ internal fun AppNavHost(navController: NavHostController, paddingValues: Padding
 
         composable(
             route = AppScreen.MovieDetails.route,
-            arguments = listOf(navArgument("movieId") { type = NavType.IntType })
+            arguments = listOf(navArgument("movieId") {
+                type = NavType.IntType
+            })
         ) { navBackStackEntry ->
-            val movieId: Int = navBackStackEntry.arguments?.getInt("movieId") ?: 0
+            val movieId = navBackStackEntry.arguments?.getInt("movieId") ?: 0
             MovieDetailsScreen(movieId = movieId)
         }
     }

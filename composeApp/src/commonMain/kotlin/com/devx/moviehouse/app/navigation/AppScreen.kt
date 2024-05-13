@@ -1,4 +1,4 @@
-package com.devx.moviehouse.navigation
+package com.devx.moviehouse.app.navigation
 
 sealed class AppScreen(val route: String) {
     data object MovieList : AppScreen("movie_list")

@@ -1,4 +1,6 @@
-package com.devx.moviehouse.theme
+@file:Suppress("FunctionName")
+
+package com.devx.moviehouse.app.theme
 
 import android.app.Activity
 import android.os.Build
@@ -10,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowInsetsControllerCompat
-import com.devx.moviehouse.MovieHouseApp
+import com.devx.moviehouse.MovieHouseApplication
 
 @Composable
 internal actual fun SystemAppearance(isDark: Boolean) {
@@ -25,9 +27,9 @@ internal actual fun SystemAppearance(isDark: Boolean) {
 }
 
 @RequiresApi(Build.VERSION_CODES.S)
-internal actual fun dynamicLightColorScheme(): ColorScheme =
-    dynamicLightColorScheme(MovieHouseApp.INSTANCE.applicationContext)
+internal actual fun DynamicLightColorScheme(): ColorScheme =
+    dynamicLightColorScheme(MovieHouseApplication.INSTANCE.applicationContext)
 
 @RequiresApi(Build.VERSION_CODES.S)
-internal actual fun dynamicDarkColorScheme(): ColorScheme =
-    dynamicDarkColorScheme(MovieHouseApp.INSTANCE.applicationContext)
+internal actual fun DynamicDarkColorScheme(): ColorScheme =
+    dynamicDarkColorScheme(MovieHouseApplication.INSTANCE.applicationContext)

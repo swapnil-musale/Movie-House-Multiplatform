@@ -1,4 +1,4 @@
-package com.devx.moviehouse.ui
+package com.devx.moviehouse.app.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,11 +8,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-internal fun PopularScreen() {
+internal fun MovieDetailsScreen(movieId: Int) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text("Popular Screen")
+        Text("Movie Details Screen : $movieId")
     }
 }

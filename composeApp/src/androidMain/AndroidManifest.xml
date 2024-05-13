@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:name=".MovieHouseApp"
+        android:name=".MovieHouseApplication"
         android:icon="@android:drawable/ic_menu_compass"
         android:label="Movie House"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">

@@ -44,6 +44,7 @@ kotlin {
 
             implementation(libs.kDeviceInfo)
             implementation(libs.compose.navigation)
+            implementation(libs.compose.viewmodel)
         }
 
         androidMain.dependencies {

@@ -1,4 +1,4 @@
-package com.devx.moviehouse
+package com.devx.moviehouse.app
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -9,8 +9,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.devx.moviehouse.navigation.AppBottomNavigationBar
-import com.devx.moviehouse.theme.MovieHouseTheme
+import com.devx.moviehouse.app.navigation.AppBottomNavigationBar
+import com.devx.moviehouse.app.navigation.AppNavHost
+import com.devx.moviehouse.app.theme.MovieHouseTheme
 
 @Composable
 internal fun MovieHouseApp(dynamicColor: Boolean = false) {
