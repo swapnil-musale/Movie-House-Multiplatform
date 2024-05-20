@@ -5,12 +5,14 @@ androidGradlePlugin = "8.4.0"
 
 activityCompose = "1.9.0"
 kDeviceInfo = "0.0.7"
+coroutine = "1.8.1"
+
 composeNavigation = "2.7.0-alpha06"
 composeViewModel = "2.8.0-rc03"
 
+ktor = "2.3.10"
 koin = "3.6.0-alpha3"
-koinCompose = "3.6.0-alpha3"
-koinComposeMultiplatform = "1.2.0-Beta4"
+koinMultiplatform = "1.2.0-Beta4"
 
 
 [libraries]
@@ -18,11 +20,20 @@ activity-compose = { module = "androidx.activity:activity-compose", version.ref 
 kDeviceInfo = { module = "io.github.swapnil-musale:KDeviceInfo", version.ref = "kDeviceInfo" }
 compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewModel" }
+coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
+
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinCompose" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComposeMultiplatform" }
-koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinComposeMultiplatform" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinMultiplatform" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinMultiplatform" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 
 
 [plugins]

@@ -50,12 +50,21 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
 
             implementation(libs.kDeviceInfo)
+            implementation(libs.coroutine.core)
+
             implementation(libs.compose.navigation)
             implementation(libs.compose.viewmodel)
 
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
+
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.logging)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+
+            implementation(libs.kDeviceInfo)
         }
 
         androidMain.dependencies {
@@ -64,6 +73,12 @@ kotlin {
 
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+
+            implementation(libs.ktor.client.android)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
