@@ -12,29 +12,32 @@ import androidx.navigation.compose.rememberNavController
 import com.devx.moviehouse.app.navigation.AppBottomNavigationBar
 import com.devx.moviehouse.navigation.AppNavHost
 import com.devx.moviehouse.theme.MovieHouseTheme
+import org.koin.compose.KoinContext
 
 @Composable
 internal fun MovieHouseApp(dynamicColor: Boolean = false) {
-    MovieHouseTheme(dynamicColor = dynamicColor) {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
-        ) {
-            val navController = rememberNavController()
-
-            val currentBackStackEntry by navController.currentBackStackEntryAsState()
-            val currentDestination = currentBackStackEntry?.destination?.route
-
-            Scaffold(
+    KoinContext {
+        MovieHouseTheme(dynamicColor = dynamicColor) {
+            Surface(
                 modifier = Modifier.fillMaxSize(),
-                bottomBar = {
-                    AppBottomNavigationBar(
-                        navController = navController,
-                        currentDestination = currentDestination
-                    )
-                },
-            ) { paddingValues ->
-                AppNavHost(navController = navController, paddingValues = paddingValues)
+                color = MaterialTheme.colorScheme.background
+            ) {
+                val navController = rememberNavController()
+
+                val currentBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentDestination = currentBackStackEntry?.destination?.route
+
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    bottomBar = {
+                        AppBottomNavigationBar(
+                            navController = navController,
+                            currentDestination = currentDestination
+                        )
+                    },
+                ) { paddingValues ->
+                    AppNavHost(navController = navController, paddingValues = paddingValues)
+                }
             }
         }
     }
