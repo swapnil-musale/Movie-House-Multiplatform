@@ -1,6 +1,6 @@
 @file:Suppress("FunctionName")
 
-package com.devx.moviehouse.app.theme
+package com.devx.moviehouse.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme

@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import com.devx.moviehouse.navigation.bottomNavigationItems
 
 @Composable
 fun AppBottomNavigationBar(navController: NavController, currentDestination: String?) {

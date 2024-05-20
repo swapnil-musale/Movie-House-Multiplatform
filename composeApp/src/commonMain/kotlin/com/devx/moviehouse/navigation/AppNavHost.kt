@@ -1,4 +1,4 @@
-package com.devx.moviehouse.app.navigation
+package com.devx.moviehouse.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,10 +10,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.devx.moviehouse.app.ui.MovieDetailsScreen
-import com.devx.moviehouse.app.ui.PopularScreen
-import com.devx.moviehouse.app.ui.TvSeriesScreen
-import com.devx.moviehouse.app.ui.movieList.MovieListScreen
+import com.devx.moviehouse.ui.MovieDetailsScreen
+import com.devx.moviehouse.ui.PopularScreen
+import com.devx.moviehouse.ui.TvSeriesScreen
+import com.devx.moviehouse.ui.movieList.MovieListScreen
 
 @Composable
 internal fun AppNavHost(navController: NavHostController, paddingValues: PaddingValues) {

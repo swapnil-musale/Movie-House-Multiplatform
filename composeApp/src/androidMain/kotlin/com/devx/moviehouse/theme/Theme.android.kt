@@ -1,6 +1,6 @@
 @file:Suppress("FunctionName")
 
-package com.devx.moviehouse.app.theme
+package com.devx.moviehouse.theme
 
 import android.app.Activity
 import android.os.Build

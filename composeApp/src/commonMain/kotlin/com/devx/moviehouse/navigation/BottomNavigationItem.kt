@@ -1,4 +1,4 @@
-package com.devx.moviehouse.app.navigation
+package com.devx.moviehouse.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Home
