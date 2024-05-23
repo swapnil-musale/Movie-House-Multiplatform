@@ -1,7 +1,7 @@
 [versions]
-kotlin = "1.9.23"
-jetbrainsCompose = "1.6.2"
-androidGradlePlugin = "8.4.0"
+kotlin = "2.0.0"
+jetbrainsCompose = "1.6.10"
+androidGradlePlugin = "8.4.1"
 
 activityCompose = "1.9.0"
 kDeviceInfo = "0.0.7"
@@ -22,9 +22,8 @@ compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-co
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewModel" }
 coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinMultiplatform" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinMultiplatform" }
 
@@ -40,3 +39,4 @@ ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "kto
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrainsCompose" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

@@ -7,15 +7,22 @@ import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.logging.SIMPLE
+import io.ktor.http.ContentType
+import io.ktor.http.contentType
+import io.ktor.http.parameters
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 val httpClient = HttpClient {
     defaultRequest {
-        url("https://api.themoviedb.org/3/")
+        url(urlString = "https://api.themoviedb.org/3/")
+        contentType(ContentType.Application.Json)
+        parameters {
+            append(name = "api_key", value = "-")
+        }
     }
 
-    install(ContentNegotiation) {
+    install(plugin = ContentNegotiation) {
         json(
             json = Json {
                 ignoreUnknownKeys = true
@@ -23,7 +30,7 @@ val httpClient = HttpClient {
         )
     }
 
-    install(Logging) {
+    install(plugin = Logging) {
         logger = Logger.SIMPLE
         level = LogLevel.ALL
     }

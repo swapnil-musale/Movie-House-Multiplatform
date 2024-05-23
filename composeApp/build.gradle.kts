@@ -1,9 +1,10 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -72,8 +73,6 @@ kotlin {
             implementation(libs.activity.compose)
 
             implementation(libs.koin.android)
-            implementation(libs.koin.androidx.compose)
-
             implementation(libs.ktor.client.android)
         }
 
@@ -105,9 +104,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.13"
     }
 }
 
