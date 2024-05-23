@@ -64,8 +64,6 @@ kotlin {
             implementation(libs.ktor.logging)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
-
-            implementation(libs.kDeviceInfo)
         }
 
         androidMain.dependencies {
