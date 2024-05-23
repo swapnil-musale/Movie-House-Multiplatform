@@ -1,3 +1,5 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec
+import org.jetbrains.compose.internal.utils.getLocalProperty
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -5,6 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.build.konfig)
 }
 
 kotlin {
@@ -102,6 +105,14 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+}
+
+buildkonfig {
+    packageName = "com.devx.moviehouse"
+
+    defaultConfigs {
+        buildConfigField(FieldSpec.Type.STRING, "API_KEY", getLocalProperty("API_KEY"))
     }
 }
 
