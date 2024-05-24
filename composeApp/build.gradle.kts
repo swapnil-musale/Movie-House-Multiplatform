@@ -65,8 +65,8 @@ kotlin {
 
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.logging)
-            implementation(libs.ktor.client.content.negotiation)
-            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.ktor.content.negotiation)
+            implementation(libs.ktor.json.serialization)
         }
 
         androidMain.dependencies {
