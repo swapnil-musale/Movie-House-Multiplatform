@@ -7,21 +7,22 @@ buildkonfig = "0.15.1"
 activityCompose = "1.9.0"
 kDeviceInfo = "0.0.7"
 coroutine = "1.8.1"
+napier = "2.7.1"
 
-composeNavigation = "2.7.0-alpha06"
-composeViewModel = "2.8.0-rc03"
+composeNavigation = "2.7.0-alpha07"
+composeViewModel = "2.8.0"
 
-ktor = "2.3.10"
+ktor = "3.0.0-wasm2"
 koin = "3.6.0-alpha3"
 koinMultiplatform = "1.2.0-Beta4"
+coil = "3.0.0-alpha06"
 
 
 [libraries]
+coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
-kDeviceInfo = { module = "io.github.swapnil-musale:KDeviceInfo", version.ref = "kDeviceInfo" }
 compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewModel" }
-coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
@@ -35,10 +36,17 @@ ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 
+coil = { module = "io.coil-kt.coil3:coil", version.ref = "coil" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil" }
+
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
+kDeviceInfo = { module = "io.github.swapnil-musale:KDeviceInfo", version.ref = "kDeviceInfo" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrainsCompose" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 build-konfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }

@@ -3,10 +3,11 @@ import org.jetbrains.compose.internal.utils.getLocalProperty
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
-    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.build.konfig)
 }
 
@@ -55,6 +56,7 @@ kotlin {
 
             implementation(libs.kDeviceInfo)
             implementation(libs.coroutine.core)
+            implementation(libs.napier)
 
             implementation(libs.compose.navigation)
             implementation(libs.compose.viewmodel)
@@ -67,6 +69,10 @@ kotlin {
             implementation(libs.ktor.logging)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.json.serialization)
+
+            implementation(libs.coil)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
 
         androidMain.dependencies {
@@ -105,6 +111,9 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    packaging {
+        resources.excludes += "DebugProbesKt.bin"
     }
 }
 
